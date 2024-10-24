@@ -7,7 +7,7 @@ export default function Textform(props) {
         // console.log("uppercasewas clicked")
         let newtext = text.toUpperCase();
         setText(newtext)
-        props.showAlert("converted to uppercase","success")
+        props.showAlert("converted to uppercase", "success")
 
     }
 
@@ -20,28 +20,28 @@ export default function Textform(props) {
         // console.log("lowercase was clicked")
         let newtext = text.toLowerCase()
         setText(newtext)
-        props.showAlert("converted to lowercse","success")
+        props.showAlert("converted to lowercse", "success")
 
     }
 
     let handleclear = () => {
         let newtext = ""
         setText(newtext)
-        props.showAlert("Your text has been clear","success")
+        props.showAlert("Your text has been clear", "success")
     }
 
     let handlecopy = () => {
         let newtext = document.getElementById("mybox");
         newtext.select();
         navigator.clipboard.writeText(newtext.value)
-        props.showAlert("copied","success")
+        props.showAlert("copied", "success")
 
     }
 
     let handleExtraspc = () => {
         let newtext = text.split(/[ ]+/)
         setText(newtext.join(" "))
-        props.showAlert("Removed extra spaces","success")
+        props.showAlert("Removed extra spaces", "success")
 
     }
 
@@ -54,11 +54,13 @@ export default function Textform(props) {
                 <div className="mb-3">
                     <textarea className="form-control" style={{ backgroundColor: props.mode === 'dark' ? 'rgb(6, 36, 67)' : 'white', color: props.mode === 'dark' ? 'white' : 'rgb(6, 36, 67)' }} value={text} onChange={handlechange} id="mybox" rows="3"></textarea>
                 </div>
-                <button className='btn btn-primary' onClick={handleupclick}>Convert to uppercase</button>
-                <button className='btn btn-primary ms-3' onClick={handleloclick}>Convert to lowercase</button>
-                <button className='btn btn-primary ms-3' onClick={handleclear}>Clear text</button>
-                <button className='btn btn-primary ms-3' onClick={handlecopy}>Copy text</button>
-                <button className='btn btn-primary ms-3' onClick={handleExtraspc}>Remove extra spaces</button>
+                <div className="container">
+                    <button className='btn btn-primary ms-3 my-2 col-sm-3' onClick={handleupclick}>Convert to uppercase</button>
+                    <button className='btn btn-primary ms-3 my-2 col-sm-3' onClick={handleloclick}>Convert to lowercase</button>
+                    <button className='btn btn-primary ms-3 my-2 col-sm-3' onClick={handleclear}>Clear text</button>
+                    <button className='btn btn-primary ms-3 my-2 col-sm-3' onClick={handlecopy}>Copy text</button>
+                    <button className='btn btn-primary ms-3 my-2 col-sm-3' onClick={handleExtraspc}>Remove extra spaces</button>
+                </div>
 
             </div>
 
