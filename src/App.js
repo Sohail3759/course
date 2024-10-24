@@ -1,15 +1,15 @@
 import './App.css';
-// import AboutUs from './componens/AboutUs';
+import AboutUs from './componens/AboutUs';
 import Textform from './componens/Textform';
 import Navbar from './componens/Navbar';
 import Alert from './componens/Alert';
 import { useState } from 'react';
 
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Routes
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
 
 function App(props) {
   let [mode, setmode] = useState('light') //whether dark mode is enable or not
@@ -48,21 +48,21 @@ function App(props) {
 
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} color={color} name={name} togglemode={togglemode} />
         <Alert alert={alert}></Alert>
         <div className="container my-3">
-          {/* <Routes> */}
-          {/* <Route exact path="/" element={ <Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}></Textform>}>
-            </Route> */}
-          <Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}></Textform>
-          {/* <Route exact path="/aboutus" element={ <div className="container my-3">
-                <AboutUs></AboutUs>
+          <Routes>
+          <Route exact path="/" element={ <Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}></Textform>}>
+            </Route>
+          {/* <Textform heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}></Textform> */}
+          <Route exact path="/aboutus" element={ <div className="container my-3">
+                <AboutUs mode={mode}></AboutUs>
               </div>}>
-            </Route> */}
-          {/* </Routes> */}
+            </Route>
+          </Routes>
         </div>
-        {/* </Router> */}
+        </Router>
 
 
 
