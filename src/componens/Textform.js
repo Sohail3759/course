@@ -4,7 +4,6 @@ export default function Textform(props) {
     let [text, setText] = useState('');
 
     let handleupclick = () => {
-        // console.log("uppercasewas clicked")
         let newtext = text.toUpperCase();
         setText(newtext)
         props.showAlert("converted to uppercase", "success")
@@ -12,12 +11,10 @@ export default function Textform(props) {
     }
 
     let handlechange = (event) => {
-        // console.log("onchange")
         setText(event.target.value)
     }
 
     let handleloclick = () => {
-        // console.log("lowercase was clicked")
         let newtext = text.toLowerCase()
         setText(newtext)
         props.showAlert("converted to lowercse", "success")
@@ -31,9 +28,7 @@ export default function Textform(props) {
     }
 
     let handlecopy = () => {
-        let newtext = document.getElementById("mybox");
-        newtext.select();
-        navigator.clipboard.writeText(newtext.value)
+        navigator.clipboard.writeText(text)
         props.showAlert("copied", "success")
 
     }
@@ -44,8 +39,6 @@ export default function Textform(props) {
         props.showAlert("Removed extra spaces", "success")
 
     }
-
-
 
     return (
         <>
@@ -66,8 +59,8 @@ export default function Textform(props) {
 
             <div className="contaner my-3" style={{ color: props.mode === 'dark' ? 'white' : 'rgb(6, 36, 67)' }}>
                 <h2>your text summary</h2>
-                <p>{text.split(" ").filter((element)=>{return element.length!=0}).length} words and {text.length} charecters in your sumary</p>
-                <p>{0.008 * text.split(" ").filter((element)=>{return element.length!=0}).length} minutes will take to read the {text.split(" ").filter((element)=>{return element.length!=0}).length} words summary</p>
+                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} charecters in your sumary</p>
+                <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes will take to read the {text.split(" ").filter((element)=>{return element.length!==0}).length} words summary</p>
                 <h2>Preview</h2>
                 <p>{text.length > 0 ? text : "Enter something in the textbox to preview here"}</p>
             </div>
