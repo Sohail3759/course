@@ -2,26 +2,6 @@ import React from 'react'
 
 export default function AboutUs(props) {
 
-  // const [mystyle, setmystyle] = useState({
-  //   color: 'black',
-  //   background: 'white',
-  //   borderRadius:'20px'
-  // })
-
-  // if(props.mode==='dark'){
-  //   setmystyle({
-  //     color: 'white',
-  //     background: 'rgb(6, 36, 67)',
-  //     borderRadius:'20px'
-  //   })
-  // }else{
-  //   setmystyle({
-  //     color: 'black',
-  //   background: 'white',
-  //   borderRadius:'20px'
-  //   })
-  // }
-
   return (
     <div className='container' style={{ backgroundColor: props.mode === 'dark' ? 'rgb(6, 36, 67)' : 'white' }}>
       <div className="accordion" id="accordionExample" >
